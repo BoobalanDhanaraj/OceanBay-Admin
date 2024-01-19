@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { error } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +12,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   formValue!: FormGroup;
+  adminEmail!: string;
+  errorMessage!: string;
 
   constructor(
     private api: LoginService,
     private formBuilder: FormBuilder,
-    private route: Router
+    private route: Router,
+    private toast: NgToastService
   ) {}
 
   ngOnInit(): void {
@@ -30,9 +35,36 @@ export class LoginComponent implements OnInit {
       password: this.formValue.value.password,
     };
 
-    this.api.adminLogin(loginData).subscribe((res) => {
-      console.log('Login successful', res);
-      this.route.navigate(['/home']);
-    });
+    this.api.adminLogin(loginData).subscribe(
+      (res) => {
+        this.adminEmail = res.result.email;
+        if (res.isSuccess) {
+          this.toast.success({
+            detail: 'LOGIN SUCCESS!',
+            summary: `authenticated as ${this.adminEmail}`,
+            duration: 5000,
+            position: 'topRight',
+          });
+          this.route.navigate(['/home']);
+        } else if (res.isSuccess == false) {
+          this.toast.error({
+            detail: 'ERROR!!',
+            summary: 'Your Error Message',
+            sticky: true,
+            position: 'topRight',
+          });
+          this.errorMessage = res.message;
+        }
+      },
+      (error) => {
+        this.errorMessage = error.message;
+        this.toast.error({
+          detail: 'ERROR!!',
+          summary: 'Login Failed',
+          sticky: true,
+          position: 'topRight',
+        });
+      }
+    );
   }
 }

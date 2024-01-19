@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { HomeService } from './services/home.service';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, HomeComponent],
@@ -21,8 +22,14 @@ import { HomeService } from './services/home.service';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgToastModule,
   ],
-  providers: [provideClientHydration(), LoginService, HomeService],
+  providers: [
+    provideClientHydration(),
+    LoginService,
+    HomeService,
+    NgToastModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
