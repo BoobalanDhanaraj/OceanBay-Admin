@@ -5,13 +5,25 @@
     <div class="log-card">
       <img class="logo pb-3" src="assets/logo.png" />
       <p class="heading">Welcome Back Admin</p>
-      <div class="input-group">
-        <p class="text">Email</p>
-        <input class="input" type="email" placeholder="Enter your Email" />
-        <p class="text">Password</p>
-        <input class="input" type="password" placeholder="Enter Password" />
-      </div>
-      <button class="btn">Sign In</button>
+      <form [formGroup]="formValue">
+        <div class="input-group">
+          <p class="text">Email</p>
+          <input
+            class="input"
+            type="email"
+            placeholder="Enter your Email"
+            formControlName="email"
+          />
+          <p class="text">Password</p>
+          <input
+            class="input"
+            type="password"
+            placeholder="Enter Password"
+            formControlName="password"
+          />
+        </div>
+        <button class="btn" (click)="onAdminLogin()">Sign In</button>
+      </form>
     </div>
   </div>
 </div>

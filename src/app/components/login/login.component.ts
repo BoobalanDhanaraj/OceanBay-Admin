@@ -1,10 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  formValue!: FormGroup;
 
+  constructor(private api: LoginService, private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.formValue = this.formBuilder.group({
+      email: [''],
+      password: [''],
+    });
+  }
+
+  onAdminLogin() {
+    const loginData = {
+      email: this.formValue.value.email,
+      password: this.formValue.value.password,
+    };
+
+    this.api.adminLogin(loginData).subscribe((res) => {
+      console.log('Login successful', res);
+    });
+  }
 }
