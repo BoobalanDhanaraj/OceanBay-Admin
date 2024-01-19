@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,11 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent implements OnInit {
   formValue!: FormGroup;
 
-  constructor(private api: LoginService, private formBuilder: FormBuilder) {}
+  constructor(
+    private api: LoginService,
+    private formBuilder: FormBuilder,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
@@ -27,6 +32,7 @@ export class LoginComponent implements OnInit {
 
     this.api.adminLogin(loginData).subscribe((res) => {
       console.log('Login successful', res);
+      this.route.navigate(['/home']);
     });
   }
 }
