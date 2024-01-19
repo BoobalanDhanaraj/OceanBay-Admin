@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { Observable, map } from 'rxjs';
 export class LoginService {
   private BaseUrl = 'https://localhost:7002/api';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   adminLogin(data: any): Observable<any> {
     const url = `${this.BaseUrl}/Admin/login`;
@@ -16,6 +17,9 @@ export class LoginService {
     // Make the HTTP POST request with the data in the request body
     return this.http.post(url, data).pipe(
       map((res: any) => {
+        if (res.isSuccess) {
+          this.authService.setAuthenticationStatus(true);
+        }
         return res;
       })
     );
