@@ -28,5 +28,11 @@ export class HomeComponent {
   onAdminLogout() {
     this.authService.setAuthenticationStatus(false);
     this.route.navigate(['/login']);
+    this.toast.success({
+      detail: 'Sucessfully Logged out!',
+      summary: 'Enter the credentials to Login again',
+      duration: 5000,
+      position: 'topRight',
+    });
   }
 }
