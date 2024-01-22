@@ -1,5 +1,5 @@
 .container {
-  background-color: rgb(255, 255, 255);
+  background-image: linear-gradient(to right, #9796f0, #fbc7d4);
   height: 65px;
   margin-top: 15px;
   border-radius: 20px;
@@ -102,7 +102,7 @@ p {
   transition: all 0.2s linear;
   cursor: pointer;
   border: none;
-  background: #fff;
+  background: transparent;
 }
 
 .back > svg {
@@ -118,6 +118,5 @@ p {
 }
 
 .back:hover {
-  box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
   transform: translateY(-2px);
 }
