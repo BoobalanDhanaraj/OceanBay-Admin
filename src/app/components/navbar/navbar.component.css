@@ -7,7 +7,13 @@
 }
 
 .row {
-  padding-top: 18px;
+  padding-top: 17px;
+}
+
+.logo {
+  width: 170px;
+  margin-bottom: 10px;
+  padding-left: 30px;
 }
 
 p {
@@ -15,13 +21,12 @@ p {
 }
 
 /* Back to home button */
-.Backcta {
+.cta {
   border: none;
   background: none;
-  padding-left: 30px;
 }
 
-.Backcta span {
+.cta span {
   padding-bottom: 7px;
   letter-spacing: 4px;
   font-size: 14px;
@@ -47,7 +52,7 @@ p {
   transition: transform 0.25s ease-out;
 }
 
-.Backcta:hover .hover-underline-animation:after {
+.cta:hover .hover-underline-animation:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -90,33 +95,39 @@ p {
 }
 
 /* Logout button */
-.back {
-  display: flex;
-  height: 2em;
-  width: 100px;
-  align-items: center;
-  justify-content: center;
-  background-color: #eeeeee4b;
-  border-radius: 3px;
-  letter-spacing: 1px;
-  transition: all 0.2s linear;
-  cursor: pointer;
+.Logcta {
   border: none;
-  background: transparent;
+  background: none;
 }
 
-.back > svg {
-  margin-right: 5px;
-  margin-left: 5px;
-  font-size: 20px;
-  transition: all 0.4s ease-in;
+.Logcta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
-.back:hover > svg {
-  font-size: 1.2em;
-  transform: translateX(-5px);
+.hover-line-animation {
+  position: relative;
+  width: fit-content;
+  color: black;
+  padding-bottom: 20px;
 }
 
-.back:hover {
-  transform: translateY(-2px);
+.hover-line-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.Logcta:hover .hover-line-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
