@@ -6,13 +6,4 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HomeService {
-  private BaseUrl = 'https://localhost:7122/api';
-
-  constructor(private http: HttpClient) {}
-
-  getProductList(): Observable<any> {
-    const url = `${this.BaseUrl}/Product/ProductList`;
-
-    return this.http.get<any>(url);
-  }
 }

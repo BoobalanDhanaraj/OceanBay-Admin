@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HomeService } from '../../services/home.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
@@ -15,7 +14,6 @@ export class HomeComponent {
   adminDetails: any;
 
   constructor(
-    private api: HomeService,
     private authService: AuthService,
     private route: Router,
     private toast: NgToastService,
@@ -23,10 +21,6 @@ export class HomeComponent {
   ) {}
 
   ngOnInit(): void {
-    this.api.getProductList().subscribe((res) => {
-      this.productList = res.result;
-    });
-
     this.data.loginResponse$.subscribe((response) => {
       this.adminDetails = response;
     });
