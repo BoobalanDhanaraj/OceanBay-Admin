@@ -3,6 +3,7 @@ import { HomeService } from '../../services/home.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +12,23 @@ import { NgToastService } from 'ng-angular-popup';
 })
 export class HomeComponent {
   productList: any;
+  adminDetails: any;
 
   constructor(
     private api: HomeService,
     private authService: AuthService,
     private route: Router,
-    private toast: NgToastService
+    private toast: NgToastService,
+    private data: DataService
   ) {}
 
   ngOnInit(): void {
     this.api.getProductList().subscribe((res) => {
       this.productList = res.result;
+    });
+
+    this.data.loginResponse$.subscribe((response) => {
+      this.adminDetails = response;
     });
   }
 

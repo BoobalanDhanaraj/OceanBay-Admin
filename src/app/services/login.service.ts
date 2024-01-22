@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { AuthService } from './auth.service';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,11 @@ import { AuthService } from './auth.service';
 export class LoginService {
   private BaseUrl = 'https://localhost:7002/api';
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private dataService: DataService
+  ) {}
 
   adminLogin(data: any): Observable<any> {
     const url = `${this.BaseUrl}/Admin/login`;
@@ -19,6 +24,7 @@ export class LoginService {
       map((res: any) => {
         if (res.isSuccess) {
           this.authService.setAuthenticationStatus(true);
+          this.dataService.setLoginResponse(res);
         }
         return res;
       })

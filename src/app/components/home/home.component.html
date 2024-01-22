@@ -8,8 +8,8 @@
       </svg>
     </div>
     <p class="name-client">
-      Jhon Doe
-      <span>CEO of WritBook </span>
+      {{ adminDetails.result.username }}
+      <span>{{ adminDetails.result.email }}</span>
     </p>
     <button class="Btn" (click)="onAdminLogout()">
       <div class="sign">
