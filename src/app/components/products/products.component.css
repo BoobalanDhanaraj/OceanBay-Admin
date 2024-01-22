@@ -1,5 +1,11 @@
 .card {
   box-shadow: 0 0.1em 0.5em rgb(1, 28, 71, 0.3);
+  width: 250px;
+}
+
+img {
+  width: 100px;
+  height: 150px;
 }
 
 /* Add Product Button */

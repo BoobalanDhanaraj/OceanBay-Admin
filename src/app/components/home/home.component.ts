@@ -10,7 +10,6 @@ import { DataService } from '../../services/data.service';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  productList: any;
   adminDetails: any;
 
   constructor(
