@@ -14,6 +14,7 @@ import { NgToastModule } from 'ng-angular-popup';
 import { ProductsComponent } from './components/products/products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductService } from './services/product.service';
+import { AddProductsComponent } from './components/products/add-products/add-products.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProductService } from './services/product.service';
     HomeComponent,
     ProductsComponent,
     NavbarComponent,
+    AddProductsComponent,
   ],
   imports: [
     BrowserModule,
