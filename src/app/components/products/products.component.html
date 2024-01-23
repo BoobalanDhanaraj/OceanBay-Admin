@@ -1,7 +1,11 @@
 <app-navbar></app-navbar>
 <div class="container">
   <div class="text-center container">
-    <div class="button-container">
+    <div
+      class="button-container"
+      data-toggle="modal"
+      data-target="#addProductModal"
+    >
       <button class="button mt-4 mb-5" type="button">
         <span class="button__text">Add Product</span>
       </button>
@@ -27,6 +31,22 @@
             <p>Seller: {{ Product.seller }}</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add Product Modal -->
+<div
+  class="modal fade"
+  id="addProductModal"
+  tabindex="-1"
+  aria-labelledby="addProductModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>hi hekko</h1>
       </div>
     </div>
   </div>
