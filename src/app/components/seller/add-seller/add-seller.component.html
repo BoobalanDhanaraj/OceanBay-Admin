@@ -1,0 +1,24 @@
+<form [formGroup]="formValue">
+  <div class="modal-header">
+    <h2 class="modal-title">New Seller</h2>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="Name" class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="Name" />
+    </div>
+    <div class="mb-3">
+      <label for="Email" class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName="Email" />
+    </div>
+    <div class="mb-3">
+      <label for="Phone Number" class="form-label">Phone Number</label>
+      <input class="form-control" formControlName="PhoneNumber" />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="save" (click)="onAddNewSeller()" data-dismiss="modal">
+      <span>Save</span>
+    </button>
+  </div>
+</form>

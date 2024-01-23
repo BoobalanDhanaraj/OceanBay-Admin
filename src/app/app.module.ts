@@ -17,6 +17,7 @@ import { ProductService } from './services/product.service';
 import { AddProductsComponent } from './components/products/add-products/add-products.component';
 import { SellerComponent } from './components/seller/seller.component';
 import { SellerService } from './services/seller.service';
+import { AddSellerComponent } from './components/seller/add-seller/add-seller.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SellerService } from './services/seller.service';
     NavbarComponent,
     AddProductsComponent,
     SellerComponent,
+    AddSellerComponent,
   ],
   imports: [
     BrowserModule,

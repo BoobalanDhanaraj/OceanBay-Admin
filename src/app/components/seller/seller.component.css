@@ -56,26 +56,3 @@
 .modal-title {
   margin: 0 auto;
 }
-
-/* Save button */
-.save {
-  cursor: pointer;
-  font-weight: 700;
-  font-family: Helvetica, "sans-serif";
-  transition: all 0.2s;
-  padding: 10px 20px;
-  border-radius: 100px;
-  background: #cfef00;
-  border: 1px solid transparent;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-}
-
-save:hover {
-  background: #c4e201;
-}
-
-save:active {
-  transform: scale(0.95);
-}
