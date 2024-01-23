@@ -16,6 +16,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductService } from './services/product.service';
 import { AddProductsComponent } from './components/products/add-products/add-products.component';
 import { SellerComponent } from './components/seller/seller.component';
+import { SellerService } from './services/seller.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { SellerComponent } from './components/seller/seller.component';
     LoginService,
     ProductService,
     NgToastModule,
+    SellerService,
   ],
   bootstrap: [AppComponent],
 })
