@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 //import { AuthService } from './auth.service';
-import { DataService } from './data.service';
+import { DataService } from '../helpers/shared-login-data';
 
 @Injectable({
   providedIn: 'root',

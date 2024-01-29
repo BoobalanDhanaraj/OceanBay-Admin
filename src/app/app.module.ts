@@ -21,6 +21,7 @@ import { AddSellerComponent } from './components/seller/add-seller/add-seller.co
 import { ConfirmationDialogComponent } from './helpers/confirmation-dialog/confirmation-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CustomerComponent } from './components/customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     SellerComponent,
     AddSellerComponent,
     ConfirmationDialogComponent,
+    CustomerComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 //import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
-import { DataService } from '../../services/data.service';
+import { DataService } from '../../helpers/shared-login-data';
 
 @Component({
   selector: 'app-navbar',
