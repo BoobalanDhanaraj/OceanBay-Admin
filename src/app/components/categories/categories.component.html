@@ -12,7 +12,7 @@
           class="button mt-4 mb-5"
           type="button"
           data-toggle="modal"
-          data-target="#addSellerModal"
+          data-target="#addCategoryModal"
         >
           <span class="button__text">Add new category</span>
         </button>
@@ -55,5 +55,18 @@
         </div>
       </div>
     </ul>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="addCategoryModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <app-add-categories></app-add-categories>
+    </div>
   </div>
 </div>

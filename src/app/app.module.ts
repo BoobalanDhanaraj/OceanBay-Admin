@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { AddCategoriesComponent } from './components/categories/add-categories/add-categories.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
     ConfirmationDialogComponent,
     CustomerComponent,
     CategoriesComponent,
+    AddCategoriesComponent,
   ],
   imports: [
     BrowserModule,
