@@ -59,8 +59,7 @@ export class AddSellerComponent {
 
   private InitiatePage() {
     this.api.getSellersList().subscribe((res) => {
-      this.sellerDetails = res;
-      console.log(this.sellerDetails);
+      this.sellerDetails = res.result;
     });
   }
 }

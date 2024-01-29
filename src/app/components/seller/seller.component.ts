@@ -13,5 +13,10 @@ export class SellerComponent {
 
   constructor(private api: SellerService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.api.getSellersList().subscribe((res) => {
+      this.sellerDetails = res.result;
+      console.log(this.sellerDetails);
+    });
+  }
 }
