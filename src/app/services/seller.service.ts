@@ -25,4 +25,10 @@ export class SellerService {
       })
     );
   }
+
+  deleteSeller(id: number): Observable<any> {
+    const url = `${this.BaseUrl}/seller/DeleteSeller?id=${id}`;
+
+    return this.http.delete(url);
+  }
 }

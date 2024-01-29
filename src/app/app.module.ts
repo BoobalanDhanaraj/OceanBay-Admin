@@ -18,6 +18,10 @@ import { AddProductsComponent } from './components/products/add-products/add-pro
 import { SellerComponent } from './components/seller/seller.component';
 import { SellerService } from './services/seller.service';
 import { AddSellerComponent } from './components/seller/add-seller/add-seller.component';
+import { ConfirmationDialogComponent } from './helpers/confirmation-dialog/confirmation-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ import { AddSellerComponent } from './components/seller/add-seller/add-seller.co
     AddProductsComponent,
     SellerComponent,
     AddSellerComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,9 @@ import { AddSellerComponent } from './components/seller/add-seller/add-seller.co
     HttpClientModule,
     ReactiveFormsModule,
     NgToastModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   providers: [
     provideClientHydration(),

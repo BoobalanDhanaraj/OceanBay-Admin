@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SellerService } from '../../../services/seller.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-seller',
@@ -15,7 +16,8 @@ export class AddSellerComponent {
   constructor(
     private api: SellerService,
     private formBuilder: FormBuilder,
-    private toast: NgToastService
+    private toast: NgToastService,
+    private route: Router
   ) {}
 
   ngOnInit(): void {
@@ -43,7 +45,7 @@ export class AddSellerComponent {
           duration: 5000,
           position: 'topRight',
         });
-        this.InitiatePage();
+        this.route.navigate(['/sellers']);
         this.formValue.reset();
       },
       (err) => {
