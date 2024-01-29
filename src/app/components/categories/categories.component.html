@@ -35,14 +35,21 @@
     <h2>Categories with their Sub-Categories</h2>
     <ul class="list">
       <div class="row">
-        <div class="col-lg-3 col-md-12 mb-1">
+        <div
+          class="col-lg-3 col-md-12 mb-1"
+          *ngFor="let list of allCategories; let i = index"
+        >
           <li id="list">
-            <span>1</span>
-            Item 1
-            <ul class="sub-list">
-              <li id="sub-list"><span>1</span>Subitem 1.1</li>
-              <li id="sub-list"><span>1</span>Subitem 1.1</li>
-              <li id="sub-list"><span>1</span>Subitem 1.1</li>
+            <span>{{ i + 1 }}</span>
+            {{ list.categoryName }}
+            <ul
+              class="sub-list"
+              *ngFor="let subCat of list.subcategoryNames; let i = index"
+            >
+              <li id="sub-list">
+                <span>{{ i + 1 }}</span
+                >{{ subCat }}
+              </li>
             </ul>
           </li>
         </div>
