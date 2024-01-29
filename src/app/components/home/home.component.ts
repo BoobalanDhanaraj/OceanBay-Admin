@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+//import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { DataService } from '../../services/data.service';
@@ -13,7 +13,7 @@ export class HomeComponent {
   adminDetails: any;
 
   constructor(
-    private authService: AuthService,
+    //private authService: AuthService,
     private route: Router,
     private toast: NgToastService,
     private data: DataService
@@ -26,7 +26,7 @@ export class HomeComponent {
   }
 
   onAdminLogout() {
-    this.authService.setAuthenticationStatus(false);
+    //this.authService.setAuthenticationStatus(false);
     this.route.navigate(['/login']);
     this.toast.success({
       detail: 'Sucessfully Logged out!',

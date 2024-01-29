@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { AuthService } from './auth.service';
+//import { AuthService } from './auth.service';
 import { DataService } from './data.service';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class LoginService {
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService,
+    //private authService: AuthService,
     private dataService: DataService
   ) {}
 
@@ -23,7 +23,7 @@ export class LoginService {
     return this.http.post(url, data).pipe(
       map((res: any) => {
         if (res.isSuccess) {
-          this.authService.setAuthenticationStatus(true);
+          //this.authService.setAuthenticationStatus(true);
           this.dataService.setLoginResponse(res);
         }
         return res;

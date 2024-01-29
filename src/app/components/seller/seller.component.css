@@ -59,17 +59,17 @@
 
 /* Seller profile card */
 .card-client {
-  background: #6f6ad7;
+  background: #eee;
   width: 13rem;
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 20px;
   padding-right: 20px;
-  border: 4px solid #4d5bdc;
-  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+  border: 4px solid #070708;
+  box-shadow: 0 6px 10px rgb(135, 136, 138);
   border-radius: 10px;
   text-align: center;
-  color: #1d0a70;
+  color: #14121e;
   font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
 }
@@ -83,7 +83,7 @@
   object-fit: cover;
   width: 5rem;
   height: 5rem;
-  border: 4px solid #4d5bdc;
+  border: 4px solid #0f0f11;
   border-radius: 999px;
   display: flex;
   justify-content: center;
@@ -115,7 +115,7 @@
   width: 100%;
   height: 2px;
   margin: 20px 0;
-  background: #08084d;
+  background: #131317;
 }
 
 .options a {

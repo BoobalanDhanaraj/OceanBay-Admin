@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+//import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { DataService } from '../../services/data.service';
@@ -14,20 +14,20 @@ export class NavbarComponent {
   adminDetails: any;
 
   constructor(
-    private authService: AuthService,
+    //private authService: AuthService,
     private route: Router,
     private toast: NgToastService,
     private data: DataService
   ) {}
 
   ngOnInit(): void {
-    this.data.loginResponse$.subscribe((response) => {
-      this.adminDetails = response;
-    });
+    // this.data.loginResponse$.subscribe((response) => {
+    //   this.adminDetails = response;
+    // });
   }
 
   onAdminLogout() {
-    this.authService.setAuthenticationStatus(false);
+    //this.authService.setAuthenticationStatus(false);
     this.route.navigate(['/login']);
     this.toast.success({
       detail: 'Sucessfully Logged out!',
