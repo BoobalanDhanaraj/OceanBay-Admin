@@ -21,7 +21,6 @@ import { AddSellerComponent } from './components/seller/add-seller/add-seller.co
 import { ConfirmationDialogComponent } from './helpers/confirmation-dialog/confirmation-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -44,7 +43,6 @@ import { MatButtonModule } from '@angular/material/button';
     NgToastModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule,
   ],
   providers: [
     provideClientHydration(),

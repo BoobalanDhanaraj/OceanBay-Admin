@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SellerService } from '../../../services/seller.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
-import { Router } from '@angular/router';
+import { SharedSellerService } from '../../../helpers/shared-seller';
 
 @Component({
   selector: 'app-add-seller',
@@ -17,7 +17,7 @@ export class AddSellerComponent {
     private api: SellerService,
     private formBuilder: FormBuilder,
     private toast: NgToastService,
-    private route: Router
+    private sharedSellerService: SharedSellerService
   ) {}
 
   ngOnInit(): void {
@@ -45,7 +45,7 @@ export class AddSellerComponent {
           duration: 5000,
           position: 'topRight',
         });
-        this.route.navigate(['/sellers']);
+        this.sharedSellerService.notifySellerAdded();
         this.formValue.reset();
       },
       (err) => {

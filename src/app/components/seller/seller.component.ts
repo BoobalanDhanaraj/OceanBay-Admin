@@ -3,6 +3,7 @@ import { SellerService } from '../../services/seller.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../helpers/confirmation-dialog/confirmation-dialog.component';
+import { SharedSellerService } from '../../helpers/shared-seller';
 
 @Component({
   selector: 'app-seller',
@@ -13,10 +14,16 @@ export class SellerComponent {
   formValue!: FormGroup;
   sellerDetails: any;
 
-  constructor(private api: SellerService, private dialog: MatDialog) {}
+  constructor(
+    private api: SellerService,
+    private dialog: MatDialog,
+    private sharedSellerService: SharedSellerService
+  ) {}
 
   ngOnInit(): void {
-    this.getSellerDetails();
+    this.sharedSellerService.sellerAdded$.subscribe(() => {
+      this.getSellerDetails();
+    });
   }
 
   onDeleteSeller(sellerId: number): void {
