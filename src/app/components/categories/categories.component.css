@@ -76,6 +76,7 @@
   width: 100%;
   list-style: none;
   padding: 10px;
+  align-items: center;
   background: #d9d7f5;
   box-shadow: 0 5px 25px rgba(197, 194, 194, 0.1);
   transition: transform 0.5s;
@@ -108,4 +109,14 @@
 .box ul li:hover span {
   background: #fff;
   color: #302c63;
+}
+
+svg {
+  background: transparent;
+  width: 1rem;
+}
+
+.box ul li span,
+.box ul li svg {
+  vertical-align: middle; /* Align the elements vertically */
 }
