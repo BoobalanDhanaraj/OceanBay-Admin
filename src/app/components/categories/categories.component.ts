@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CategoriesService } from '../../services/categories.service';
+import { NgToastService } from 'ng-angular-popup';
+import { SharedCategoriesService } from '../../helpers/shared-categories.service';
 
 @Component({
   selector: 'app-categories',
@@ -9,10 +11,16 @@ import { CategoriesService } from '../../services/categories.service';
 export class CategoriesComponent {
   allCategories: any;
 
-  constructor(private api: CategoriesService) {}
+  constructor(
+    private api: CategoriesService,
+    private toast: NgToastService,
+    private sharedApi: SharedCategoriesService
+  ) {}
 
   ngOnInit(): void {
-    this.onCategoriesList();
+    this.sharedApi.categoryAdded$.subscribe(() => {
+      this.onCategoriesList();
+    });
   }
 
   private onCategoriesList() {

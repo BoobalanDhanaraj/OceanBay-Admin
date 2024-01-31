@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,5 +14,15 @@ export class CategoriesService {
     const url = `${this.BaseUrl}/categories/AllCategories`;
 
     return this.http.get<any>(url);
+  }
+
+  postNewCategory(data: any): Observable<any> {
+    const url = `${this.BaseUrl}/categories/AddCategory`;
+
+    return this.http.post(url, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
   }
 }

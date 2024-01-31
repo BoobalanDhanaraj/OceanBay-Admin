@@ -21,7 +21,6 @@ export class AddSellerComponent {
   ) {}
 
   ngOnInit(): void {
-    this.InitiatePage();
     this.formValue = this.formBuilder.group({
       Name: [''],
       Email: [''],
@@ -39,29 +38,12 @@ export class AddSellerComponent {
     this.api.postNewSeller(sellerData).subscribe(
       (res) => {
         console.log(res);
-        this.toast.success({
-          detail: 'SUCCESS!!',
-          summary: `${res.message}`,
-          duration: 5000,
-          position: 'topRight',
-        });
         this.sharedSellerService.notifySellerAdded();
         this.formValue.reset();
       },
       (err) => {
-        this.toast.error({
-          detail: 'ERROR!!',
-          summary: 'Failed to Add',
-          sticky: true,
-          position: 'topRight',
-        });
+        alert(err);
       }
     );
-  }
-
-  private InitiatePage() {
-    this.api.getSellersList().subscribe((res) => {
-      this.sellerDetails = res.result;
-    });
   }
 }
