@@ -1,63 +1,73 @@
-<div class="modal-header">
-  <h1 class="modal-title">New Product</h1>
-</div>
-<div class="modal-body">
-  <div class="mb-3">
-    <label for="Name" class="form-label">Name</label>
-    <input type="text" class="form-control" />
+<form [formGroup]="formValue">
+  <div class="modal-header">
+    <h1 class="modal-title">New Product</h1>
   </div>
-  <div class="mb-3">
-    <label for="Name" class="form-label">Product Image URL</label>
-    <input type="text" class="form-control" />
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Price</label>
-    <input type="number" class="form-control" />
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Stock</label>
-    <input type="number" class="form-control" />
-  </div>
-  <div class="mb-3">
-    <div class="row">
-      <div class="col">
-        <label for="Name" class="form-label">Category</label>
-        <select class="form-select" aria-label="Default select example">
-          <option value="">-</option>
-          <ng-container *ngFor="let list of categories">
-            <option value="{{ list.categoryID }}">
-              {{ list.categoryName }}
-            </option>
-          </ng-container>
-        </select>
-      </div>
-      <div class="col">
-        <label for="Name" class="form-label">Sub-Category</label>
-        <select class="form-select" aria-label="Default select example">
-          <option value="">-</option>
-          <!-- <ng-container>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="Name" class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="name" />
+    </div>
+    <div class="mb-3">
+      <label for="Name" class="form-label">Product Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="productImageUrl"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" class="form-control" formControlName="price" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Stock</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="stockQuantity"
+      />
+    </div>
+    <div class="mb-3">
+      <div class="row">
+        <div class="col">
+          <label for="Name" class="form-label">Category</label>
+          <select class="form-select" formControlName="categoryId">
+            <option value="">-</option>
+            <ng-container *ngFor="let list of categories">
+              <option value="{{ list.categoryID }}">
+                {{ list.categoryName }}
+              </option>
+            </ng-container>
+          </select>
+        </div>
+        <div class="col">
+          <label for="Name" class="form-label">Sub-Category</label>
+          <select class="form-select" formControlName="subcategoryId">
+            <option value="">-</option>
+            <!-- <ng-container>
         <option value="{{ list.categoryID }}">
           {{ list.categoryName }}
         </option>
       </ng-container> -->
-        </select>
+          </select>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="mb-3">
-    <label for="Name" class="form-label">Seller</label>
-    <select class="form-select" aria-label="Default select example">
-      <option value="">-</option>
-      <!-- <ng-container>
+    <div class="mb-3">
+      <label for="Name" class="form-label">Seller</label>
+      <select class="form-select" formControlName="sellerId">
+        <option value="">-</option>
+        <!-- <ng-container>
         <option value="{{ list.categoryID }}">
           {{ list.categoryName }}
         </option>
       </ng-container> -->
-    </select>
+      </select>
+    </div>
   </div>
-</div>
-<div class="modal-footer">
-  <button class="save" data-dismiss="modal">
-    <span>Save</span>
-  </button>
-</div>
+  <div class="modal-footer">
+    <button class="save" data-dismiss="modal">
+      <span>Save</span>
+    </button>
+  </div>
+</form>
