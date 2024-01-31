@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CategoriesService } from '../../../services/categories.service';
-import { NgToastService } from 'ng-angular-popup';
 import { SharedCategoriesService } from '../../../helpers/shared-categories.service';
 
 @Component({
@@ -15,8 +14,7 @@ export class AddCategoriesComponent {
   constructor(
     private api: CategoriesService,
     private formBuilder: FormBuilder,
-    private sharedApi: SharedCategoriesService,
-    private toast: NgToastService
+    private sharedApi: SharedCategoriesService
   ) {}
 
   ngOnInit(): void {

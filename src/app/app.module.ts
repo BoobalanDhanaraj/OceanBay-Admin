@@ -24,6 +24,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AddCategoriesComponent } from './components/categories/add-categories/add-categories.component';
+import { AddSubCategoryComponent } from './components/categories/add-sub-category/add-sub-category.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AddCategoriesComponent } from './components/categories/add-categories/a
     CustomerComponent,
     CategoriesComponent,
     AddCategoriesComponent,
+    AddSubCategoryComponent,
   ],
   imports: [
     BrowserModule,

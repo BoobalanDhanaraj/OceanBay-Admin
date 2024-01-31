@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { SellerService } from '../../../services/seller.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { NgToastService } from 'ng-angular-popup';
 import { SharedSellerService } from '../../../helpers/shared-seller';
 
 @Component({
@@ -16,7 +15,6 @@ export class AddSellerComponent {
   constructor(
     private api: SellerService,
     private formBuilder: FormBuilder,
-    private toast: NgToastService,
     private sharedSellerService: SharedSellerService
   ) {}
 
