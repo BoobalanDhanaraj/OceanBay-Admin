@@ -24,11 +24,11 @@
         <label for="Name" class="form-label">Category</label>
         <select class="form-select" aria-label="Default select example">
           <option value="">-</option>
-          <!-- <ng-container>
-        <option value="{{ list.categoryID }}">
-          {{ list.categoryName }}
-        </option>
-      </ng-container> -->
+          <ng-container *ngFor="let list of categories">
+            <option value="{{ list.categoryID }}">
+              {{ list.categoryName }}
+            </option>
+          </ng-container>
         </select>
       </div>
       <div class="col">
