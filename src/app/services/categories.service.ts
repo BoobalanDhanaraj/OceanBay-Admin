@@ -35,4 +35,16 @@ export class CategoriesService {
       })
     );
   }
+
+  deleteCategory(id: number): Observable<any> {
+    const url = `${this.BaseUrl}/categories/DeleteCategory?categoryId=${id}`;
+
+    return this.http.delete(url);
+  }
+
+  deleteSubCategory(id: number): Observable<any> {
+    const url = `${this.BaseUrl}/subcategories/DeleteSubcategory?id=${id}`;
+
+    return this.http.delete(url);
+  }
 }
