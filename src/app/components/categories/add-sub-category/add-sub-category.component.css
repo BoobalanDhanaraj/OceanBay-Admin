@@ -20,3 +20,11 @@ save:hover {
 save:active {
   transform: scale(0.95);
 }
+
+/* select dropdown */
+select {
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  border-color: rgb(197, 195, 195);
+}

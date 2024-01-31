@@ -19,13 +19,16 @@ export class CategoriesComponent {
 
   ngOnInit(): void {
     this.sharedApi.categoryAdded$.subscribe(() => {
-      this.onCategoriesList();
+      this.sharedApi.subCategoryAdded$.subscribe(() => {
+        this.onCategoriesList();
+      });
     });
   }
 
   private onCategoriesList() {
     this.api.getAllCategoriesList().subscribe((res) => {
       this.allCategories = res.result;
+      this.sharedApi.setCategoryList(this.allCategories);
       console.log(res.result);
     });
   }

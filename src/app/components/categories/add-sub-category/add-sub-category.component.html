@@ -1,14 +1,31 @@
-<div class="modal-header">
-  <h1 class="modal-title">New Sub-Category</h1>
-</div>
-<div class="modal-body">
-  <div class="mb-3">
-    <label for="Name" class="form-label">Category Name</label>
-    <input type="text" class="form-control" />
+<form [formGroup]="formValue">
+  <div class="modal-header">
+    <h1 class="modal-title">New Sub-Category</h1>
   </div>
-</div>
-<div class="modal-footer">
-  <button class="save" data-dismiss="modal">
-    <span>Save</span>
-  </button>
-</div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="Name" class="form-label">Category</label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        formControlName="categoryId"
+      >
+        <option value="">-</option>
+        <ng-container *ngFor="let list of allCategories">
+          <option value="{{ list.categoryID }}">
+            {{ list.categoryName }}
+          </option>
+        </ng-container>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="Name" class="form-label">Sub-Category Name</label>
+      <input type="text" class="form-control" formControlName="Name" />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="save" data-dismiss="modal" (click)="onAddNewSubCategory()">
+      <span>Save</span>
+    </button>
+  </div>
+</form>

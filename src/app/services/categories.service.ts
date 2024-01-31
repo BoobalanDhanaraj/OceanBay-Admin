@@ -25,4 +25,14 @@ export class CategoriesService {
       })
     );
   }
+
+  postNewSubCategory(data: any): Observable<any> {
+    const url = `${this.BaseUrl}/subcategories/AddSubcategory`;
+
+    return this.http.post(url, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }
