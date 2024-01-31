@@ -30,7 +30,6 @@ export class AddCategoriesComponent {
 
     this.api.postNewCategory(CategoryData).subscribe(
       (res) => {
-        console.log(res);
         this.sharedApi.notifyCategoryAdded();
         this.formValue.reset();
       },

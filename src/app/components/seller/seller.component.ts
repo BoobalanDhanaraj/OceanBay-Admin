@@ -37,9 +37,7 @@ export class SellerComponent {
         //User clicked "Yes," proceed with deletion
         this.api.deleteSeller(sellerId).subscribe(
           (res) => {
-            // Remove the deleted job from the jobStatus array
             this.getSellerDetails();
-            console.log(res);
           },
           (err) => {
             alert(err);

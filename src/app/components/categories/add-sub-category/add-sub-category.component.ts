@@ -21,7 +21,6 @@ export class AddSubCategoryComponent {
   ngOnInit(): void {
     this.sharedApi.categoryList$.subscribe((response) => {
       this.allCategories = response;
-      console.log('cate', this.allCategories);
     });
     this.formValue = this.formBuilder.group({
       categoryId: [''],
@@ -37,7 +36,6 @@ export class AddSubCategoryComponent {
 
     this.api.postNewSubCategory(SubCategoryData).subscribe(
       (res) => {
-        console.log(res);
         this.sharedApi.notifySubCategoryAdded();
         this.formValue.reset();
       },
