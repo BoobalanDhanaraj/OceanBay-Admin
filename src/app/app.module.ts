@@ -25,6 +25,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AddCategoriesComponent } from './components/categories/add-categories/add-categories.component';
 import { AddSubCategoryComponent } from './components/categories/add-sub-category/add-sub-category.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { AddSubCategoryComponent } from './components/categories/add-sub-categor
     ProductService,
     NgToastModule,
     SellerService,
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent],
 })
