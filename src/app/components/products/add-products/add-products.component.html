@@ -57,11 +57,9 @@
       <label for="Name" class="form-label">Seller</label>
       <select class="form-select" formControlName="sellerId">
         <option value="">-</option>
-        <!-- <ng-container>
-        <option value="{{ list.categoryID }}">
-          {{ list.categoryName }}
+        <option *ngFor="let seller of sellerDetails" [value]="seller.sellerID">
+          {{ seller.sellerName }}
         </option>
-      </ng-container> -->
       </select>
     </div>
   </div>
