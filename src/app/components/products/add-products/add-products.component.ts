@@ -38,4 +38,20 @@ export class AddProductsComponent {
       this.categories = response;
     });
   }
+
+  updateSubcategories() {
+    const categoryId = this.formValue.get('categoryId')?.value;
+
+    const selectedCategory = this.categories.find(
+      (category: any) => category.categoryID == categoryId
+    );
+
+    if (selectedCategory) {
+      this.formValue
+        .get('subcategoryId')
+        ?.patchValue(selectedCategory.subcategories);
+    } else {
+      this.formValue.get('subcategoryId')?.setValue(null);
+    }
+  }
 }

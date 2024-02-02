@@ -30,25 +30,25 @@
     <div class="mb-3">
       <div class="row">
         <div class="col">
-          <label for="Name" class="form-label">Category</label>
-          <select class="form-select" formControlName="categoryId">
-            <option value="">-</option>
-            <ng-container *ngFor="let list of categories">
-              <option value="{{ list.categoryID }}">
-                {{ list.categoryName }}
-              </option>
-            </ng-container>
+          <label for="categoryId">Category</label>
+          <select formControlName="categoryId" (change)="updateSubcategories()">
+            <option
+              *ngFor="let category of categories"
+              [value]="category.categoryID"
+            >
+              {{ category.categoryName }}
+            </option>
           </select>
         </div>
         <div class="col">
-          <label for="Name" class="form-label">Sub-Category</label>
-          <select class="form-select" formControlName="subcategoryId">
-            <option value="">-</option>
-            <!-- <ng-container>
-        <option value="{{ list.categoryID }}">
-          {{ list.categoryName }}
-        </option>
-      </ng-container> -->
+          <label for="subcategoryId">Subcategory</label>
+          <select formControlName="subcategoryId">
+            <option
+              *ngFor="let subcategory of formValue.get('subcategoryId')?.value"
+              [value]="subcategory.subCategoryID"
+            >
+              {{ subcategory.subCategoryName }}
+            </option>
           </select>
         </div>
       </div>
