@@ -26,6 +26,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { AddCategoriesComponent } from './components/categories/add-categories/add-categories.component';
 import { AddSubCategoryComponent } from './components/categories/add-sub-category/add-sub-category.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AddProductImageComponent } from './components/products/add-products/add-product-image/add-product-image.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     CategoriesComponent,
     AddCategoriesComponent,
     AddSubCategoryComponent,
+    AddProductImageComponent,
   ],
   imports: [
     BrowserModule,

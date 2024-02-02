@@ -31,7 +31,7 @@
             <p>Seller: {{ Product.seller }}</p>
           </div>
           <div class="options">
-            <a>
+            <a data-toggle="modal" data-target="#addProductImageModal">
               <svg
                 clip-rule="evenodd"
                 fill-rule="evenodd"
@@ -89,6 +89,20 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <app-add-products></app-add-products>
+    </div>
+  </div>
+</div>
+<!-- Add Product Image Modal -->
+<div
+  class="modal fade"
+  id="addProductImageModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <app-add-product-image></app-add-product-image>
     </div>
   </div>
 </div>
