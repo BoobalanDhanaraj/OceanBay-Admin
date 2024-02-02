@@ -20,7 +20,7 @@ export class ProductsComponent {
   ) {}
 
   ngOnInit(): void {
-    this.productApi.sellerAdded$.subscribe(() => {
+    this.productApi.ProductAdded$.subscribe(() => {
       this.getProductList();
     });
   }
@@ -29,5 +29,9 @@ export class ProductsComponent {
     this.api.getProductList().subscribe((res) => {
       this.productList = res.result;
     });
+  }
+
+  onShareProductDetail(product: any) {
+    this.productApi.shareProductDetail(product);
   }
 }

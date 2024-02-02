@@ -6,10 +6,16 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedProductService {
   private ProductAddedSubject = new BehaviorSubject<undefined>(undefined);
+  private ProductDetailSubject = new BehaviorSubject<undefined>(undefined);
 
-  sellerAdded$ = this.ProductAddedSubject.asObservable();
+  ProductAdded$ = this.ProductAddedSubject.asObservable();
+  ProductDetail$ = this.ProductDetailSubject.asObservable();
 
   notifySellerAdded() {
     this.ProductAddedSubject.next(undefined);
+  }
+
+  shareProductDetail(product: any) {
+    this.ProductDetailSubject.next(product);
   }
 }
