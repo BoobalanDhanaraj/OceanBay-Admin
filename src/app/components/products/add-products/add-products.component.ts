@@ -3,6 +3,7 @@ import { SharedCategoriesService } from '../../../helpers/shared-categories.serv
 import { CategoriesService } from '../../../services/categories.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SellerService } from '../../../services/seller.service';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
   selector: 'app-add-products',
@@ -18,7 +19,8 @@ export class AddProductsComponent {
     private categoryApi: CategoriesService,
     private sharedCategoryApi: SharedCategoriesService,
     private formBuilder: FormBuilder,
-    private sellerApi: SellerService
+    private sellerApi: SellerService,
+    private api: ProductService
   ) {}
 
   ngOnInit(): void {
@@ -42,6 +44,22 @@ export class AddProductsComponent {
 
     this.sharedCategoryApi.categoryList$.subscribe((response) => {
       this.categories = response;
+    });
+  }
+
+  onAddNewProduct() {
+    const productData = {
+      productImageUrl: this.formValue.value.productImageUrl,
+      name: this.formValue.value.name,
+      price: this.formValue.value.price,
+      stockQuantity: this.formValue.value.stockQuantity,
+      categoryId: this.formValue.value.categoryId,
+      subcategoryId: this.formValue.value.subcategoryId,
+      sellerId: this.formValue.value.sellerId,
+    };
+
+    this.api.postProductList(productData).subscribe((res) => {
+      console.log(res);
     });
   }
 
