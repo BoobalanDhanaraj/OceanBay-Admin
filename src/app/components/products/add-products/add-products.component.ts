@@ -4,6 +4,7 @@ import { CategoriesService } from '../../../services/categories.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SellerService } from '../../../services/seller.service';
 import { ProductService } from '../../../services/product.service';
+import { SharedProductService } from '../../../helpers/shared-product.service';
 
 @Component({
   selector: 'app-add-products',
@@ -20,7 +21,8 @@ export class AddProductsComponent {
     private sharedCategoryApi: SharedCategoriesService,
     private formBuilder: FormBuilder,
     private sellerApi: SellerService,
-    private api: ProductService
+    private api: ProductService,
+    private productApi: SharedProductService
   ) {}
 
   ngOnInit(): void {
@@ -59,7 +61,8 @@ export class AddProductsComponent {
     };
 
     this.api.postProductList(productData).subscribe((res) => {
-      console.log(res);
+      this.productApi.notifySellerAdded();
+      this.formValue.reset();
     });
   }
 
