@@ -25,4 +25,10 @@ export class ProductService {
       })
     );
   }
+
+  deleteProduct(id: number): Observable<any> {
+    const url = `${this.BaseUrl}/Product/DeleteProduct?productId=${id}`;
+
+    return this.http.delete(url);
+  }
 }
