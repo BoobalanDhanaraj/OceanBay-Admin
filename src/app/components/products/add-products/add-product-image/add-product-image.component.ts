@@ -7,14 +7,14 @@ import { SharedProductService } from '../../../../helpers/shared-product.service
   styleUrl: './add-product-image.component.css',
 })
 export class AddProductImageComponent {
-  productDetail: [] = [];
+  productDetail: any;
 
   constructor(private productApi: SharedProductService) {}
 
   ngOnInit(): void {
     this.productApi.ProductDetail$.subscribe((product) => {
-      //this.productDetail = product;
-      console.log(product);
+      this.productDetail = product;
+      console.log(this.productDetail);
     });
   }
 }

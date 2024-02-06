@@ -37,7 +37,7 @@
             <a
               data-toggle="modal"
               data-target="#addProductImageModal"
-              (click)="onShareProductDetail(Product.productID, Product.name)"
+              (click)="onShareProductDetail(Product)"
             >
               <svg
                 clip-rule="evenodd"
@@ -54,7 +54,11 @@
               </svg>
               <span class="tooltip">Images</span>
             </a>
-            <a data-toggle="modal" data-target="#editProductModal">
+            <a
+              data-toggle="modal"
+              data-target="#editProductModal"
+              (click)="onEditProductDetail(Product)"
+            >
               <svg
                 clip-rule="evenodd"
                 fill-rule="evenodd"
