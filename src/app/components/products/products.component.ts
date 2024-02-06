@@ -55,7 +55,11 @@ export class ProductsComponent {
     });
   }
 
-  onShareProductDetail(product: any) {
+  onShareProductDetail(id: number, name: any) {
+    const product = {
+      productID: id,
+      name: name,
+    };
     this.productApi.shareProductDetail(product);
   }
 }

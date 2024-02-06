@@ -11,7 +11,10 @@
       </button>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-md-12 mb-4" *ngFor="let Product of productList">
+      <div
+        class="col-lg-3 col-md-12 mb-4"
+        *ngFor="let Product of productList; let i = index"
+      >
         <div class="card">
           <div
             class="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
@@ -34,7 +37,7 @@
             <a
               data-toggle="modal"
               data-target="#addProductImageModal"
-              (click)="onShareProductDetail(Product)"
+              (click)="onShareProductDetail(Product.productID, Product.name)"
             >
               <svg
                 clip-rule="evenodd"

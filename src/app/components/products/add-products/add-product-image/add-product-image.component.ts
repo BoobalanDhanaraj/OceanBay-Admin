@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SharedProductService } from '../../../../helpers/shared-product.service';
-import { response } from 'express';
 
 @Component({
   selector: 'app-add-product-image',
@@ -8,14 +7,14 @@ import { response } from 'express';
   styleUrl: './add-product-image.component.css',
 })
 export class AddProductImageComponent {
-  productDetail: any;
+  productDetail: [] = [];
 
   constructor(private productApi: SharedProductService) {}
 
   ngOnInit(): void {
     this.productApi.ProductDetail$.subscribe((product) => {
-      this.productDetail = product;
-      console.log(this.productDetail);
+      //this.productDetail = product;
+      console.log(product);
     });
   }
 }
