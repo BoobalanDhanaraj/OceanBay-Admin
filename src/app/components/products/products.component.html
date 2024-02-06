@@ -54,7 +54,7 @@
               </svg>
               <span class="tooltip">Images</span>
             </a>
-            <a>
+            <a data-toggle="modal" data-target="#editProductModal">
               <svg
                 clip-rule="evenodd"
                 fill-rule="evenodd"
@@ -110,6 +110,20 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <app-add-product-image></app-add-product-image>
+    </div>
+  </div>
+</div>
+<!-- Edit Product Modal -->
+<div
+  class="modal fade"
+  id="editProductModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <app-edit-product></app-edit-product>
     </div>
   </div>
 </div>
