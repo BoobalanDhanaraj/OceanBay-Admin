@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedProductService } from '../../../helpers/shared-product.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-product',
@@ -8,8 +9,12 @@ import { SharedProductService } from '../../../helpers/shared-product.service';
 })
 export class EditProductComponent {
   productDetail: any;
+  formValue!: FormGroup;
 
-  constructor(private productApi: SharedProductService) {}
+  constructor(
+    private productApi: SharedProductService,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.productApi.EditProduct$.subscribe((product) => {
