@@ -31,4 +31,14 @@ export class ProductService {
 
     return this.http.delete(url);
   }
+
+  postProductImage(id: number, imageUrls: string): Observable<any> {
+    const url = `${this.BaseUrl}/productimages/AddImage?productId=${id}`;
+
+    return this.http.post(url, imageUrls).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }
