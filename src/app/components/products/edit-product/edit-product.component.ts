@@ -8,7 +8,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrl: './edit-product.component.css',
 })
 export class EditProductComponent {
-  productDetail: any;
   formValue!: FormGroup;
 
   constructor(
@@ -17,9 +16,18 @@ export class EditProductComponent {
   ) {}
 
   ngOnInit(): void {
-    this.productApi.EditProduct$.subscribe((product) => {
-      this.productDetail = product;
-      console.log(this.productDetail);
+    this.formValue = this.formBuilder.group({
+      name: [''],
+      imageUrl: [''],
     });
+    this.productApi.EditProduct$.subscribe((product) => {
+      console.log(product);
+      this.editProducts(product);
+    });
+  }
+
+  private editProducts(product: any) {
+    this.formValue.controls['name'].setValue(product?.name);
+    this.formValue.controls['imageUrl'].setValue(product?.productImages[0]);
   }
 }
